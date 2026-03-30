@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarjan Khatiwada — Portfolio</title>
+    <meta name="description" content="Aarjan Khatiwada — Computer Science student, ML Intern, and AI enthusiast. Explore my experience, blog, and what I'm working on right now.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">AK.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" data-magnetic>About</a></li>
+                <li><a href="#now" data-magnetic>Now</a></li>
+                <li><a href="#experience" data-magnetic>Experience</a></li>
+                <li><a href="#schedule" data-magnetic>Schedule</a></li>
+                <li><a href="#blog" data-magnetic>Blog</a></li>
+                <li><a href="#education" data-magnetic>Education</a></li>
+                <li><a href="#contact" data-magnetic>Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="container hero-content">
+                <p class="greeting mono-text reveal-item">// hello world</p>
+                <h1 class="hero-title reveal-item">
+                    <span class="hero-name">Aarjan</span>
+                    <span class="hero-lastname">Khatiwada</span>
+                </h1>
+                <h2 class="sub-title reveal-item" id="scrambleText">Computer Science & AI Enthusiast</h2>
+                <p class="hero-description reveal-item">
+                    Building intelligent systems that bridge the gap between software and the physical world.
+                </p>
+                <div class="hero-buttons reveal-item">
+                    <a href="#experience" class="btn btn-primary" data-magnetic>Explore My Work</a>
+                    <a href="mailto:aarjankhatiwada2@gmail.com" class="btn btn-outline" data-magnetic>Say Hello</a>
+                </div>
+                <div class="scroll-indicator reveal-item">
+                    <div class="scroll-line"></div>
+                    <span class="mono-text">scroll</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title reveal-item"><span class="section-num mono-text">01</span> About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="reveal-item">I have hands-on experience supporting <strong>lab development</strong> and <strong>technical projects</strong> through collaboration and problem-solving.</p>
+                        <p class="reveal-item">Skilled in data handling, web tools, and IT troubleshooting, with a growing focus on <strong>AI and engineering integration</strong>. Passionate about AI, machine learning, and sensor-based systems that connect software and real-world applications.</p>
+                    </div>
+                    <div class="stats-row reveal-item">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="4.0">0</span>
+                            <span class="stat-label">GPA</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">Roles</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What I'm Doing Now Section -->
+        <section id="now" class="section">
+            <div class="container">
+                <h2 class="section-title reveal-item"><span class="section-num mono-text">02</span> Right Now</h2>
+                <div class="now-card reveal-item" data-tilt>
+                    <div class="now-header">
+                        <div class="live-indicator">
+                            <span class="live-dot"></span>
+                            <span class="mono-text">LIVE</span>
+                        </div>
+                        <span class="now-timestamp mono-text" id="nowTimestamp"></span>
+                    </div>
+                    <div class="now-body">
+                        <div class="now-status" id="nowStatus">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="now-footer">
+                        <p class="mono-text now-update-note">Last updated: <span id="lastUpdated"></span></p>
+                    </div>
+                </div>
+                <div class="now-activities reveal-item" id="nowActivities">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title reveal-item"><span class="section-num mono-text">03</span> Experience</h2>
+                <div class="timeline" id="timeline">
+                    <!-- ML Intern -->
+                    <div class="timeline-item reveal-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" data-tilt>
+                            <div class="timeline-header">
+                                <h3>ML Intern</h3>
+                                <span class="timeline-company">Southern Utah University</span>
+                                <span class="date mono-text">Jan 2025 — Present</span>
+                            </div>
+                            <ul class="experience-list">
+                                <li>Contribute to the development of an AI/ML-focused engineering lab integrating drones, cameras, and sensor systems.</li>
+                                <li>Design and test computer vision pipelines to classify humans vs. dogs from aerial drone imagery.</li>
+                                <li>Collect, label, and preprocess visual datasets to support supervised learning workflows.</li>
+                                <li>Evaluate and refine classification models to improve accuracy and robustness in real-world conditions.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Lab Assistant -->
+                    <div class="timeline-item reveal-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" data-tilt>
+                            <div class="timeline-header">
+                                <h3>Lab Assistant — Makerspace</h3>
+                                <span class="timeline-company">Southern Utah University</span>
+                                <span class="date mono-text">Sep 2025 — Present</span>
+                            </div>
+                            <ul class="experience-list">
+                                <li>Assist students and faculty with hands-on projects and maintain an organized, safe lab environment.</li>
+                                <li>Help professors build and set up new labs, including the Strength Lab, by assembling and preparing equipment.</li>
+                                <li>Inspect, maintain, and operate lab tools safely to ensure reliability and efficiency.</li>
+                                <li>Collaborated with team members to improve lab workflows and provide technical help for diverse engineering projects.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- CS Intern -->
+                    <div class="timeline-item reveal-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" data-tilt>
+                            <div class="timeline-header">
+                                <h3>CS Intern</h3>
+                                <span class="timeline-company">Reliable Nepal Life Insurance</span>
+                                <span class="date mono-text">May 2025 — Jul 2025</span>
+                            </div>
+                            <ul class="experience-list">
+                                <li>Performed SQL queries to extract data and supported branches with data-driven requests.</li>
+                                <li>Developed an internal lottery application using HTML and CSS for agent prize selection.</li>
+                                <li>Analyzed and managed data using Excel to support administrative and reporting tasks.</li>
+                                <li>Provided IT support, including troubleshooting and software installation, to ensure smooth office operations.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Front Desk -->
+                    <div class="timeline-item reveal-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" data-tilt>
+                            <div class="timeline-header">
+                                <h3>Front Desk Assistant</h3>
+                                <span class="timeline-company">Drone Hospital Nepal</span>
+                                <span class="date mono-text">Dec 2024 — Apr 2025</span>
+                            </div>
+                            <ul class="experience-list">
+                                <li>Managed records, schedules, and data systems to support smooth daily operations.</li>
+                                <li>Communicated effectively with staff and clients to resolve issues and coordinate tasks.</li>
+                                <li>Handled data entry and documentation with precision, organization, and attention to detail.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Robotics Club -->
+                    <div class="timeline-item reveal-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" data-tilt>
+                            <div class="timeline-header">
+                                <h3>President, Robotics Club</h3>
+                                <span class="timeline-company">NAMI College</span>
+                                <span class="date mono-text">Aug 2022 — May 2024</span>
+                            </div>
+                            <ul class="experience-list">
+                                <li>Led club operations and organized team participation in multiple inter-school competitions.</li>
+                                <li>Planned and coordinated projects, schedules, and materials for smooth execution of events.</li>
+                                <li>Won the intra-school science expo by guiding a team project from concept to completion.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="section">
+            <div class="container">
+                <h2 class="section-title reveal-item"><span class="section-num mono-text">04</span> My Schedule</h2>
+                <p class="section-subtitle reveal-item">A typical week in my life.</p>
+                <div class="schedule-wrapper reveal-item">
+                    <div class="schedule-grid" id="scheduleGrid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <h2 class="section-title reveal-item"><span class="section-num mono-text">05</span> Blog</h2>
+                <p class="section-subtitle reveal-item">Thoughts, learnings, and experiments.</p>
+                <div class="blog-grid" id="blogGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title reveal-item"><span class="section-num mono-text">06</span> Education</h2>
+                <div class="education-card reveal-item" data-tilt>
+                    <div class="edu-badge mono-text">4.0 GPA</div>
+                    <h3>B.S. Computer Science</h3>
+                    <h4>Southern Utah University — Cedar City, UT</h4>
+                    <p class="date mono-text">Expected August 2029</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-item"><span class="section-num mono-text">07</span> Get In Touch</h2>
+            <p class="footer-text reveal-item">
+                Whether you have a question, a project idea, or just want to say hi — my inbox is always open.
+            </p>
+            <a href="mailto:aarjankhatiwada2@gmail.com" class="btn btn-primary btn-large reveal-item" data-magnetic>Say Hello</a>
+            <div class="social-links reveal-item">
+                <a href="mailto:aarjankhatiwada2@gmail.com" class="social-icon" aria-label="Email" data-magnetic>
+                    <i data-lucide="mail"></i>
+                </a>
+                <a href="https://linkedin.com/in/slothaarjan/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" data-magnetic>
+                    <i data-lucide="linkedin"></i>
+                </a>
+                <a href="tel:4352636550" class="social-icon" aria-label="Phone" data-magnetic>
+                    <i data-lucide="phone"></i>
+                </a>
+            </div>
+            <p class="copyright mono-text">Designed & built by Aarjan Khatiwada © 2025</p>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+    <script src="js/script.js"></script>
+</body>
+</html>
